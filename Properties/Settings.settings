@@ -1,7 +1,12 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="New_menu_for_minersweeper.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="best_time" Type="System.String" Scope="User">
+      <Value Profile="(Default)">00 : 00</Value>
+    </Setting>
+    <Setting Name="best_user" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Игрок</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

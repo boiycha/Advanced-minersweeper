@@ -37,6 +37,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lValue = new System.Windows.Forms.Label();
+            this.lBest = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.lSize = new System.Windows.Forms.Label();
             this.lBomb = new System.Windows.Forms.Label();
@@ -113,6 +116,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lValue);
+            this.panel1.Controls.Add(this.lBest);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.lTimer2);
             this.panel1.Controls.Add(this.label1);
@@ -127,6 +133,37 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(217, 446);
             this.panel1.TabIndex = 5;
+            // 
+            // lValue
+            // 
+            this.lValue.AutoSize = true;
+            this.lValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lValue.Location = new System.Drawing.Point(26, 388);
+            this.lValue.Name = "lValue";
+            this.lValue.Size = new System.Drawing.Size(54, 16);
+            this.lValue.TabIndex = 13;
+            this.lValue.Text = "Время :";
+            // 
+            // lBest
+            // 
+            this.lBest.AutoSize = true;
+            this.lBest.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lBest.Location = new System.Drawing.Point(26, 366);
+            this.lBest.Name = "lBest";
+            this.lBest.Size = new System.Drawing.Size(52, 16);
+            this.lBest.TabIndex = 12;
+            this.lBest.Text = "Игрок :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(26, 340);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(135, 16);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Лучший результат :";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // button3
             // 
@@ -284,5 +321,8 @@
         private System.Windows.Forms.Button bRestart;
         private System.Windows.Forms.Button bContinue;
         private System.Windows.Forms.Label lPause;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lValue;
+        private System.Windows.Forms.Label lBest;
     }
 }

@@ -15,7 +15,7 @@ namespace New_menu_for_minersweeper
         int height = 10;
         int width = 10;
         int offset = 25;
-        int bombPercent = 10;
+        int bombPercent = 1;
         bool isFirstClick = true;
         int cellsOpened = 0;
         int bombs = 0;
@@ -29,6 +29,8 @@ namespace New_menu_for_minersweeper
         {
             InitializeComponent();
             PauseMenu.Hide();
+            lValue.Text = Properties.Settings.Default.best_time;
+            lBest.Text = Properties.Settings.Default.best_user;
             tGame.Interval = 500;
             m = 0;
             s = 0;
@@ -46,7 +48,7 @@ namespace New_menu_for_minersweeper
             lBomb.Text = "Количество бомб : " + (((height*width)/100)*bombPercent).ToString();
             lSize.Text = "Размер бомб : " + width.ToString() + "*" + height.ToString();
 
-            
+          
             GenerateField();
             tGame.Start();
             
@@ -133,6 +135,13 @@ namespace New_menu_for_minersweeper
             }
             MessageBox.Show("Вы проиграли");
             tGame.Stop();
+
+            //int a = Int32.Parse(lValue.Text);
+
+
+           
+
+
             Application.Restart();
 
 
@@ -320,6 +329,11 @@ namespace New_menu_for_minersweeper
             Application.Restart();
         }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
         void CheckWin()
         {
             int cells = width * height;
@@ -327,6 +341,13 @@ namespace New_menu_for_minersweeper
             if (cellsOpened >= emptyCells)
             {
                 MessageBox.Show("Вы победили! :)");
+                lValue.Text = lTimer1.Text + " : " + lTimer2.Text;
+                Properties.Settings.Default.best_time = lValue.Text;
+                Properties.Settings.Default.Save();
+
+                lBest.Text = Data.UserName;
+                Properties.Settings.Default.best_user = lBest.Text;
+                Properties.Settings.Default.Save();
                 tGame.Stop();
             }
         }
