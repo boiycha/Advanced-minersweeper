@@ -44,7 +44,7 @@ namespace New_menu_for_minersweeper
             lName.Text = "Текущий игрок :\n" + Data.UserName;
             lBomb.Text = "Количество бомб : " + (bombCount).ToString();
             lSize.Text = "Размер поля : " + width.ToString() + "*" + height.ToString();
-            lFlags.Text = "Количество флагов: 0";
+            lFlags.Text = "Количество флагов : 0";
 
             GenerateField();
             tGame.Start();

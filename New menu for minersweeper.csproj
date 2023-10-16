@@ -63,6 +63,18 @@
     <Compile Include="Game10.Designer.cs">
       <DependentUpon>Game10.cs</DependentUpon>
     </Compile>
+    <Compile Include="Game20.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game20.Designer.cs">
+      <DependentUpon>Game20.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game30.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game30.Designer.cs">
+      <DependentUpon>Game30.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -70,6 +82,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Game10.resx">
       <DependentUpon>Game10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game20.resx">
+      <DependentUpon>Game20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game30.resx">
+      <DependentUpon>Game30.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

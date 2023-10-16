@@ -16,6 +16,8 @@ namespace New_menu_for_minersweeper
     {
         public string playerName;
         Game10 game10 = new Game10();
+        Game20 game20 = new Game20();
+        Game30 game30 = new Game30();
 
         public Form1()
         {
@@ -44,6 +46,30 @@ namespace New_menu_for_minersweeper
         private void button1_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            playerName = Microsoft.VisualBasic.Interaction.InputBox("Введите имя игрока", "Настройка игрока", "Новый игрок");
+            if (playerName == "")
+            {
+                playerName = "Новый игрок";
+
+            }
+            Data.UserName = playerName;
+            game20.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            playerName = Microsoft.VisualBasic.Interaction.InputBox("Введите имя игрока", "Настройка игрока", "Новый игрок");
+            if (playerName == "")
+            {
+                playerName = "Новый игрок";
+
+            }
+            Data.UserName = playerName;
+            game30.ShowDialog();
         }
     }
 }

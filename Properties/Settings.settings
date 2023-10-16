@@ -8,5 +8,17 @@
     <Setting Name="best_user" Type="System.String" Scope="User">
       <Value Profile="(Default)">Игрок</Value>
     </Setting>
+    <Setting Name="best_time1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">00 : 00</Value>
+    </Setting>
+    <Setting Name="best_user1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Игрок</Value>
+    </Setting>
+    <Setting Name="best_time2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">00 : 00</Value>
+    </Setting>
+    <Setting Name="best_user2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Игрок</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -46,5 +46,53 @@ namespace New_menu_for_minersweeper.Properties {
                 this["best_user"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("00 : 00")]
+        public string best_time1 {
+            get {
+                return ((string)(this["best_time1"]));
+            }
+            set {
+                this["best_time1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Игрок")]
+        public string best_user1 {
+            get {
+                return ((string)(this["best_user1"]));
+            }
+            set {
+                this["best_user1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("00 : 00")]
+        public string best_time2 {
+            get {
+                return ((string)(this["best_time2"]));
+            }
+            set {
+                this["best_time2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Игрок")]
+        public string best_user2 {
+            get {
+                return ((string)(this["best_user2"]));
+            }
+            set {
+                this["best_user2"] = value;
+            }
+        }
     }
 }

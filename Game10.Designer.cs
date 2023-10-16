@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lFlags = new System.Windows.Forms.Label();
             this.lValue = new System.Windows.Forms.Label();
             this.lBest = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@
             this.bRestart = new System.Windows.Forms.Button();
             this.bContinue = new System.Windows.Forms.Button();
             this.lPause = new System.Windows.Forms.Label();
-            this.lFlags = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.PauseMenu.SuspendLayout();
             this.SuspendLayout();
@@ -134,10 +134,19 @@
             this.panel1.Controls.Add(this.lName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(255, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(163, 362);
             this.panel1.TabIndex = 5;
+            // 
+            // lFlags
+            // 
+            this.lFlags.AutoSize = true;
+            this.lFlags.Location = new System.Drawing.Point(20, 249);
+            this.lFlags.Name = "lFlags";
+            this.lFlags.Size = new System.Drawing.Size(129, 15);
+            this.lFlags.TabIndex = 11;
+            this.lFlags.Text = "Количество флагов :";
             // 
             // lValue
             // 
@@ -170,12 +179,12 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(135, 16);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Лучший результат :";
+            this.label4.Text = "Последняя победа :";
             // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(22, 203);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(94, 32);
             this.button3.TabIndex = 10;
@@ -219,7 +228,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(9, 306);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 32);
             this.button1.TabIndex = 8;
@@ -230,7 +239,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(148, 306);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(95, 31);
             this.button2.TabIndex = 9;
@@ -246,7 +255,7 @@
             this.PauseMenu.Controls.Add(this.bContinue);
             this.PauseMenu.Controls.Add(this.lPause);
             this.PauseMenu.Location = new System.Drawing.Point(9, 44);
-            this.PauseMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PauseMenu.Margin = new System.Windows.Forms.Padding(2);
             this.PauseMenu.Name = "PauseMenu";
             this.PauseMenu.Size = new System.Drawing.Size(233, 168);
             this.PauseMenu.TabIndex = 10;
@@ -254,7 +263,7 @@
             // bReturn
             // 
             this.bReturn.Location = new System.Drawing.Point(83, 115);
-            this.bReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bReturn.Margin = new System.Windows.Forms.Padding(2);
             this.bReturn.Name = "bReturn";
             this.bReturn.Size = new System.Drawing.Size(118, 37);
             this.bReturn.TabIndex = 3;
@@ -265,7 +274,7 @@
             // bRestart
             // 
             this.bRestart.Location = new System.Drawing.Point(83, 66);
-            this.bRestart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bRestart.Margin = new System.Windows.Forms.Padding(2);
             this.bRestart.Name = "bRestart";
             this.bRestart.Size = new System.Drawing.Size(118, 37);
             this.bRestart.TabIndex = 2;
@@ -276,7 +285,7 @@
             // bContinue
             // 
             this.bContinue.Location = new System.Drawing.Point(83, 18);
-            this.bContinue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bContinue.Margin = new System.Windows.Forms.Padding(2);
             this.bContinue.Name = "bContinue";
             this.bContinue.Size = new System.Drawing.Size(118, 37);
             this.bContinue.TabIndex = 1;
@@ -294,15 +303,6 @@
             this.lPause.TabIndex = 0;
             this.lPause.Text = "Пауза";
             // 
-            // lFlags
-            // 
-            this.lFlags.AutoSize = true;
-            this.lFlags.Location = new System.Drawing.Point(20, 249);
-            this.lFlags.Name = "lFlags";
-            this.lFlags.Size = new System.Drawing.Size(41, 15);
-            this.lFlags.TabIndex = 11;
-            this.lFlags.Text = "label5";
-            // 
             // Game10
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,12 +314,12 @@
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Game10";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Сапер";
+            this.Text = "Новичок";
             this.Load += new System.EventHandler(this.Game10_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
