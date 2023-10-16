@@ -1,13 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System.Windows.Forms;
 using System.IO;
 
@@ -19,7 +12,7 @@ namespace New_menu_for_minersweeper
         int height = 10;
         int width = 10;
         int offset = 25;
-        int bombCount = 10;
+        int bombCount = 1;
         bool isFirstClick = true;
         int cellsOpened = 0;
         int bombs = 0;
@@ -53,13 +46,9 @@ namespace New_menu_for_minersweeper
             lSize.Text = "Размер поля : " + width.ToString() + "*" + height.ToString();
             lFlags.Text = "Количество флагов: 0";
 
-
             GenerateField();
             tGame.Start();
-
-
         }
-
 
         void GenerateField()
         {
@@ -84,8 +73,8 @@ namespace New_menu_for_minersweeper
 
             while (bombs != bombCount)
             {
-                int xTemp = random.Next(0, 10);
-                int yTemp = random.Next(0, 10);
+                int xTemp = random.Next(0, width);
+                int yTemp = random.Next(0, height);
 
                 if (!field[xTemp, yTemp].isBomb)
                 {
@@ -127,10 +116,9 @@ namespace New_menu_for_minersweeper
                 clickedButton.isClickable = !clickedButton.isClickable; //деактивация
                 if (clickedButton.isClickable)
                 {
-                    clickedButton.Text = "B"; //бомба
+                    clickedButton.Text = "🚩"; //флаг
                     flagsCount += 1;
                     lFlags.Text = $"Количество флагов: {flagsCount}";
-
                 }
                 else
                 {
@@ -145,13 +133,12 @@ namespace New_menu_for_minersweeper
             {
                 if (button.isBomb)
                 {
-                    button.Text = "*";
-
+                    button.Text = "💣";
                 }
             }
             tGame.Stop();
             MessageBox.Show("Вы проиграли");
-           // tGame.Stop();
+           
             using (StreamWriter streamWriter = new StreamWriter("newrecords.txt", true))
             {
                 streamWriter.WriteLine("Проигрыш - " + Data.UserName + " " + lTimer1.Text + " : " + lTimer2.Text);
@@ -209,8 +196,6 @@ namespace New_menu_for_minersweeper
                     }
                 }
             }
-           // CheckWin();
-            
         }
         void OpenCell(int x, int y, FieldButton clickedButton)
         {
@@ -224,8 +209,6 @@ namespace New_menu_for_minersweeper
             {
                 clickedButton.Text = "" + bombsAround;
                 clickedButton.ForeColor = Color.Black;
-
-
             }
             clickedButton.Enabled = false; //если нет бомб, то деактивация
         }
@@ -345,68 +328,17 @@ namespace New_menu_for_minersweeper
                 lBest.Text = Data.UserName;
                 Properties.Settings.Default.best_user = lBest.Text;
                 Properties.Settings.Default.Save();
-                tGame.Stop();
+                
 
                 using (StreamWriter streamWriter = new StreamWriter("newrecords.txt", true))
                 {
 
                     streamWriter.WriteLine("Выигрыш - " + Data.UserName + " " + lTimer1.Text + " : " + lTimer2.Text);
                 }
-
+                Application.Restart();
             }
-            
-
-            
-
         } 
-
-
-    
-        /*
-        class GeneralInfo
-        {
-            public ProgramUser[] programUser1 { get; set; }
-        }
-        public class ProgramUser
-        {
-            public string name { get; set; }
-            public int minutes { get; set; }
-            public int seconds { get; set; }
-
-        }
-
-        void SaveGeneralInfo()
-        {
-            GeneralInfo generalInfo = new GeneralInfo();
-            generalInfo.programUser1 = new ProgramUser[1];
-
-            generalInfo.programUser1[0] = new ProgramUser()
-            {
-                name = Data.UserName,
-                minutes = m,
-                seconds = s
-            };
-
-            serialized = JsonConvert.SerializeObject(generalInfo);
-            if (serialized.Count() > 1)
-            {
-                if (!File.Exists("resords.json"))
-                {
-                    File.Create("records.json").Close();
-                }
-                File.WriteAllText("records.json", serialized, Encoding.GetEncoding(1251)); ;
-            }
-        }
-        */
-        
-       
-
-        
-
-
-
     }
-
     class FieldButton : Button
     {
         public bool isBomb;
@@ -416,6 +348,4 @@ namespace New_menu_for_minersweeper
         public int yCoord;
 
     }
-
-    
 }
