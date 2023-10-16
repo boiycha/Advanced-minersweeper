@@ -51,6 +51,7 @@
             this.bRestart = new System.Windows.Forms.Button();
             this.bContinue = new System.Windows.Forms.Button();
             this.lPause = new System.Windows.Forms.Label();
+            this.lFlags = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.PauseMenu.SuspendLayout();
             this.SuspendLayout();
@@ -59,12 +60,12 @@
             // 
             this.lTimer1.AutoSize = true;
             this.lTimer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lTimer1.Location = new System.Drawing.Point(26, 198);
+            this.lTimer1.Location = new System.Drawing.Point(20, 161);
+            this.lTimer1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lTimer1.Name = "lTimer1";
             this.lTimer1.Size = new System.Drawing.Size(21, 16);
             this.lTimer1.TabIndex = 0;
             this.lTimer1.Text = "00";
-            this.lTimer1.Click += new System.EventHandler(this.lTimer_Click);
             // 
             // tGame
             // 
@@ -75,7 +76,8 @@
             // 
             this.lTimer2.AutoSize = true;
             this.lTimer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lTimer2.Location = new System.Drawing.Point(69, 198);
+            this.lTimer2.Location = new System.Drawing.Point(52, 161);
+            this.lTimer2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lTimer2.Name = "lTimer2";
             this.lTimer2.Size = new System.Drawing.Size(21, 16);
             this.lTimer2.TabIndex = 1;
@@ -85,29 +87,30 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(53, 198);
+            this.label1.Location = new System.Drawing.Point(40, 161);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(10, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = ":";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(26, 172);
+            this.label2.Location = new System.Drawing.Point(20, 140);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Затрачено";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lName
             // 
             this.lName.AutoSize = true;
             this.lName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lName.Location = new System.Drawing.Point(26, 124);
+            this.lName.Location = new System.Drawing.Point(20, 101);
+            this.lName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lName.Name = "lName";
             this.lName.Size = new System.Drawing.Size(110, 16);
             this.lName.TabIndex = 4;
@@ -116,6 +119,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lFlags);
             this.panel1.Controls.Add(this.lValue);
             this.panel1.Controls.Add(this.lBest);
             this.panel1.Controls.Add(this.label4);
@@ -129,16 +133,18 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(341, 0);
+            this.panel1.Location = new System.Drawing.Point(255, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(217, 446);
+            this.panel1.Size = new System.Drawing.Size(163, 362);
             this.panel1.TabIndex = 5;
             // 
             // lValue
             // 
             this.lValue.AutoSize = true;
             this.lValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lValue.Location = new System.Drawing.Point(26, 388);
+            this.lValue.Location = new System.Drawing.Point(20, 315);
+            this.lValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lValue.Name = "lValue";
             this.lValue.Size = new System.Drawing.Size(54, 16);
             this.lValue.TabIndex = 13;
@@ -148,7 +154,8 @@
             // 
             this.lBest.AutoSize = true;
             this.lBest.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lBest.Location = new System.Drawing.Point(26, 366);
+            this.lBest.Location = new System.Drawing.Point(20, 297);
+            this.lBest.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lBest.Name = "lBest";
             this.lBest.Size = new System.Drawing.Size(52, 16);
             this.lBest.TabIndex = 12;
@@ -158,18 +165,19 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(26, 340);
+            this.label4.Location = new System.Drawing.Point(20, 276);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(135, 16);
             this.label4.TabIndex = 11;
             this.label4.Text = "Лучший результат :";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(29, 250);
+            this.button3.Location = new System.Drawing.Point(22, 203);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(126, 39);
+            this.button3.Size = new System.Drawing.Size(94, 32);
             this.button3.TabIndex = 10;
             this.button3.Text = "Справка";
             this.button3.UseVisualStyleBackColor = true;
@@ -179,7 +187,8 @@
             // 
             this.lSize.AutoSize = true;
             this.lSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lSize.Location = new System.Drawing.Point(26, 65);
+            this.lSize.Location = new System.Drawing.Point(20, 53);
+            this.lSize.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lSize.Name = "lSize";
             this.lSize.Size = new System.Drawing.Size(139, 16);
             this.lSize.TabIndex = 7;
@@ -189,7 +198,8 @@
             // 
             this.lBomb.AutoSize = true;
             this.lBomb.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lBomb.Location = new System.Drawing.Point(26, 92);
+            this.lBomb.Location = new System.Drawing.Point(20, 75);
+            this.lBomb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lBomb.Name = "lBomb";
             this.lBomb.Size = new System.Drawing.Size(106, 16);
             this.lBomb.TabIndex = 6;
@@ -199,7 +209,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(26, 38);
+            this.label3.Location = new System.Drawing.Point(20, 31);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 16);
             this.label3.TabIndex = 5;
@@ -207,9 +218,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 377);
+            this.button1.Location = new System.Drawing.Point(9, 306);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 39);
+            this.button1.Size = new System.Drawing.Size(94, 32);
             this.button1.TabIndex = 8;
             this.button1.Text = "Пауза";
             this.button1.UseVisualStyleBackColor = true;
@@ -217,9 +229,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(197, 377);
+            this.button2.Location = new System.Drawing.Point(148, 306);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 38);
+            this.button2.Size = new System.Drawing.Size(95, 31);
             this.button2.TabIndex = 9;
             this.button2.Text = "Выход";
             this.button2.UseVisualStyleBackColor = true;
@@ -232,16 +245,18 @@
             this.PauseMenu.Controls.Add(this.bRestart);
             this.PauseMenu.Controls.Add(this.bContinue);
             this.PauseMenu.Controls.Add(this.lPause);
-            this.PauseMenu.Location = new System.Drawing.Point(12, 54);
+            this.PauseMenu.Location = new System.Drawing.Point(9, 44);
+            this.PauseMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PauseMenu.Name = "PauseMenu";
-            this.PauseMenu.Size = new System.Drawing.Size(311, 207);
+            this.PauseMenu.Size = new System.Drawing.Size(233, 168);
             this.PauseMenu.TabIndex = 10;
             // 
             // bReturn
             // 
-            this.bReturn.Location = new System.Drawing.Point(111, 141);
+            this.bReturn.Location = new System.Drawing.Point(83, 115);
+            this.bReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bReturn.Name = "bReturn";
-            this.bReturn.Size = new System.Drawing.Size(157, 46);
+            this.bReturn.Size = new System.Drawing.Size(118, 37);
             this.bReturn.TabIndex = 3;
             this.bReturn.Text = "Выход";
             this.bReturn.UseVisualStyleBackColor = true;
@@ -249,9 +264,10 @@
             // 
             // bRestart
             // 
-            this.bRestart.Location = new System.Drawing.Point(111, 81);
+            this.bRestart.Location = new System.Drawing.Point(83, 66);
+            this.bRestart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bRestart.Name = "bRestart";
-            this.bRestart.Size = new System.Drawing.Size(157, 46);
+            this.bRestart.Size = new System.Drawing.Size(118, 37);
             this.bRestart.TabIndex = 2;
             this.bRestart.Text = "Главное меню";
             this.bRestart.UseVisualStyleBackColor = true;
@@ -259,9 +275,10 @@
             // 
             // bContinue
             // 
-            this.bContinue.Location = new System.Drawing.Point(111, 22);
+            this.bContinue.Location = new System.Drawing.Point(83, 18);
+            this.bContinue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bContinue.Name = "bContinue";
-            this.bContinue.Size = new System.Drawing.Size(157, 46);
+            this.bContinue.Size = new System.Drawing.Size(118, 37);
             this.bContinue.TabIndex = 1;
             this.bContinue.Text = "Продолжить";
             this.bContinue.UseVisualStyleBackColor = true;
@@ -270,23 +287,34 @@
             // lPause
             // 
             this.lPause.AutoSize = true;
-            this.lPause.Location = new System.Drawing.Point(3, 9);
+            this.lPause.Location = new System.Drawing.Point(2, 7);
+            this.lPause.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lPause.Name = "lPause";
-            this.lPause.Size = new System.Drawing.Size(49, 16);
+            this.lPause.Size = new System.Drawing.Size(41, 15);
             this.lPause.TabIndex = 0;
             this.lPause.Text = "Пауза";
             // 
+            // lFlags
+            // 
+            this.lFlags.AutoSize = true;
+            this.lFlags.Location = new System.Drawing.Point(20, 249);
+            this.lFlags.Name = "lFlags";
+            this.lFlags.Size = new System.Drawing.Size(41, 15);
+            this.lFlags.TabIndex = 11;
+            this.lFlags.Text = "label5";
+            // 
             // Game10
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 446);
+            this.ClientSize = new System.Drawing.Size(418, 362);
             this.Controls.Add(this.PauseMenu);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Game10";
@@ -324,5 +352,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lValue;
         private System.Windows.Forms.Label lBest;
+        private System.Windows.Forms.Label lFlags;
     }
 }

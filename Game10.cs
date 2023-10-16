@@ -15,21 +15,17 @@ namespace New_menu_for_minersweeper
 {
     public partial class Game10 : Form
     {
-        string serialized;
-        public static string recordPath = @"D:\Учеба\Программирование\Windows Forms\New menu for minersweeper\records.txt";
-
+        
         int height = 10;
         int width = 10;
         int offset = 25;
-        int bombPercent = 80;
+        int bombCount = 10;
         bool isFirstClick = true;
         int cellsOpened = 0;
         int bombs = 0;
+        int flagsCount = 0;
 
         int m, s;
-
-
-
 
         FieldButton[,] field;
 
@@ -53,8 +49,9 @@ namespace New_menu_for_minersweeper
             field = new FieldButton[width, height];
 
             lName.Text = "Текущий игрок :\n" + Data.UserName;
-            lBomb.Text = "Количество бомб : " + (((height * width) / 100) * bombPercent).ToString();
-            lSize.Text = "Размер бомб : " + width.ToString() + "*" + height.ToString();
+            lBomb.Text = "Количество бомб : " + (bombCount).ToString();
+            lSize.Text = "Размер поля : " + width.ToString() + "*" + height.ToString();
+            lFlags.Text = "Количество флагов: 0";
 
 
             GenerateField();
@@ -66,8 +63,9 @@ namespace New_menu_for_minersweeper
 
         void GenerateField()
         {
-
             Random random = new Random();
+
+
             for (int y = 0; y < height; y++)
             {
                 for (int x = 0; x < width; x++)
@@ -76,17 +74,25 @@ namespace New_menu_for_minersweeper
                     newButton.Location = new Point(x * offset, y * offset);
                     newButton.Size = new Size(offset, offset);
                     newButton.isClickable = true;
-                    if (random.Next(0, 100) < bombPercent) //бомба с вероятностью 20%
-                    {
-                        newButton.isBomb = true;
-                        bombs++;
-                    }
                     newButton.xCoord = x;
                     newButton.yCoord = y;
                     Controls.Add(newButton);
                     newButton.MouseUp += new MouseEventHandler(FieldButtonClick);
                     field[x, y] = newButton;
                 }
+            }
+
+            while (bombs != bombCount)
+            {
+                int xTemp = random.Next(0, 10);
+                int yTemp = random.Next(0, 10);
+
+                if (!field[xTemp, yTemp].isBomb)
+                {
+                    field[xTemp, yTemp].isBomb = true;
+                    bombs++;
+                }
+
             }
         }
 
@@ -108,10 +114,6 @@ namespace New_menu_for_minersweeper
                     else
                     {
                         Explode();
-                        using (StreamWriter streamWriter = new StreamWriter("newrecords.txt"))
-                        {
-                            streamWriter.WriteLine("Проигрыш - " + Data.UserName + " " + lTimer1.Text + " " + lTimer2.Text);
-                        }
                     }
                 }
                 else
@@ -126,6 +128,8 @@ namespace New_menu_for_minersweeper
                 if (clickedButton.isClickable)
                 {
                     clickedButton.Text = "B"; //бомба
+                    flagsCount += 1;
+                    lFlags.Text = $"Количество флагов: {flagsCount}";
 
                 }
                 else
@@ -145,13 +149,14 @@ namespace New_menu_for_minersweeper
 
                 }
             }
-            MessageBox.Show("Вы проиграли");
-            using (StreamWriter streamWriter = new StreamWriter("newrecords.txt"))
-            {
-                streamWriter.WriteLine("Проигрыш - " + Data.UserName + " " + lTimer1.Text + " " + lTimer2.Text);
-            }
-            //SaveGeneralInfo();
             tGame.Stop();
+            MessageBox.Show("Вы проиграли");
+           // tGame.Stop();
+            using (StreamWriter streamWriter = new StreamWriter("newrecords.txt", true))
+            {
+                streamWriter.WriteLine("Проигрыш - " + Data.UserName + " " + lTimer1.Text + " : " + lTimer2.Text);
+            }
+           
             Application.Restart();
 
         }
@@ -204,7 +209,8 @@ namespace New_menu_for_minersweeper
                     }
                 }
             }
-            CheckWin();
+           // CheckWin();
+            
         }
         void OpenCell(int x, int y, FieldButton clickedButton)
         {
@@ -240,21 +246,6 @@ namespace New_menu_for_minersweeper
                 }
             }
             return bombsAround;
-        }
-
-        private void lTimer_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void tGame_Tick(object sender, EventArgs e)
@@ -338,17 +329,13 @@ namespace New_menu_for_minersweeper
             Application.Restart();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         void CheckWin()
         {
             int cells = width * height;
             int emptyCells = cells - bombs;
             if (cellsOpened >= emptyCells)
             {
+                tGame.Stop();
                 MessageBox.Show("Вы победили! :)");
 
                 lValue.Text = lTimer1.Text + " : " + lTimer2.Text;
@@ -359,14 +346,17 @@ namespace New_menu_for_minersweeper
                 Properties.Settings.Default.best_user = lBest.Text;
                 Properties.Settings.Default.Save();
                 tGame.Stop();
-                //Application.Restart();
-                //SaveGeneralInfo();
-            }
 
-            using(StreamWriter streamWriter = new StreamWriter("newrecords.txt"))
-            {
-                streamWriter.WriteLine("Выигрыш - " + Data.UserName + " " + lTimer1.Text + " : " + lTimer2.Text);
+                using (StreamWriter streamWriter = new StreamWriter("newrecords.txt", true))
+                {
+
+                    streamWriter.WriteLine("Выигрыш - " + Data.UserName + " " + lTimer1.Text + " : " + lTimer2.Text);
+                }
+
             }
+            
+
+            
 
         } 
 
@@ -409,7 +399,7 @@ namespace New_menu_for_minersweeper
         }
         */
         
-        //StringBuilder sb = new StringBuilder();
+       
 
         
 
