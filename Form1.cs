@@ -18,6 +18,7 @@ namespace New_menu_for_minersweeper
         Game10 game10 = new Game10();
         Game20 game20 = new Game20();
         Game30 game30 = new Game30();
+        Records records_10 = new Records();
 
         public Form1()
         {
@@ -37,6 +38,12 @@ namespace New_menu_for_minersweeper
             {
                 playerName = "Новый игрок";
                 
+            }
+           
+            if (playerName.Length > 20)
+            {
+                MessageBox.Show("Слишком длинное имя пользователя", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Restart();
             }
             Data.UserName = playerName;
             game10.ShowDialog();
@@ -70,6 +77,11 @@ namespace New_menu_for_minersweeper
             }
             Data.UserName = playerName;
             game30.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            records_10.ShowDialog();
         }
     }
 }

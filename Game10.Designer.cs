@@ -41,12 +41,12 @@
             this.lValue = new System.Windows.Forms.Label();
             this.lBest = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.bInfo = new System.Windows.Forms.Button();
             this.lSize = new System.Windows.Forms.Label();
             this.lBomb = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.bPause = new System.Windows.Forms.Button();
+            this.bExit = new System.Windows.Forms.Button();
             this.PauseMenu = new System.Windows.Forms.Panel();
             this.bReturn = new System.Windows.Forms.Button();
             this.bRestart = new System.Windows.Forms.Button();
@@ -123,7 +123,7 @@
             this.panel1.Controls.Add(this.lValue);
             this.panel1.Controls.Add(this.lBest);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.bInfo);
             this.panel1.Controls.Add(this.lTimer2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
@@ -134,7 +134,7 @@
             this.panel1.Controls.Add(this.lName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(255, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(163, 362);
             this.panel1.TabIndex = 5;
@@ -181,16 +181,16 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Последняя победа :";
             // 
-            // button3
+            // bInfo
             // 
-            this.button3.Location = new System.Drawing.Point(22, 203);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 32);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Справка";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.bInfo.Location = new System.Drawing.Point(22, 203);
+            this.bInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bInfo.Name = "bInfo";
+            this.bInfo.Size = new System.Drawing.Size(94, 32);
+            this.bInfo.TabIndex = 10;
+            this.bInfo.Text = "Справка";
+            this.bInfo.UseVisualStyleBackColor = true;
+            this.bInfo.Click += new System.EventHandler(this.button3_Click);
             // 
             // lSize
             // 
@@ -225,27 +225,27 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Уровень :  новичок";
             // 
-            // button1
+            // bPause
             // 
-            this.button1.Location = new System.Drawing.Point(9, 306);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 32);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Пауза";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.bPause.Location = new System.Drawing.Point(9, 306);
+            this.bPause.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bPause.Name = "bPause";
+            this.bPause.Size = new System.Drawing.Size(94, 32);
+            this.bPause.TabIndex = 8;
+            this.bPause.Text = "Пауза";
+            this.bPause.UseVisualStyleBackColor = true;
+            this.bPause.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // bExit
             // 
-            this.button2.Location = new System.Drawing.Point(148, 306);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 31);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Выход";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.bExit.Location = new System.Drawing.Point(148, 306);
+            this.bExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bExit.Name = "bExit";
+            this.bExit.Size = new System.Drawing.Size(95, 31);
+            this.bExit.TabIndex = 9;
+            this.bExit.Text = "Выход";
+            this.bExit.UseVisualStyleBackColor = true;
+            this.bExit.Click += new System.EventHandler(this.button2_Click);
             // 
             // PauseMenu
             // 
@@ -255,7 +255,7 @@
             this.PauseMenu.Controls.Add(this.bContinue);
             this.PauseMenu.Controls.Add(this.lPause);
             this.PauseMenu.Location = new System.Drawing.Point(9, 44);
-            this.PauseMenu.Margin = new System.Windows.Forms.Padding(2);
+            this.PauseMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PauseMenu.Name = "PauseMenu";
             this.PauseMenu.Size = new System.Drawing.Size(233, 168);
             this.PauseMenu.TabIndex = 10;
@@ -263,7 +263,7 @@
             // bReturn
             // 
             this.bReturn.Location = new System.Drawing.Point(83, 115);
-            this.bReturn.Margin = new System.Windows.Forms.Padding(2);
+            this.bReturn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bReturn.Name = "bReturn";
             this.bReturn.Size = new System.Drawing.Size(118, 37);
             this.bReturn.TabIndex = 3;
@@ -274,7 +274,7 @@
             // bRestart
             // 
             this.bRestart.Location = new System.Drawing.Point(83, 66);
-            this.bRestart.Margin = new System.Windows.Forms.Padding(2);
+            this.bRestart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bRestart.Name = "bRestart";
             this.bRestart.Size = new System.Drawing.Size(118, 37);
             this.bRestart.TabIndex = 2;
@@ -285,7 +285,7 @@
             // bContinue
             // 
             this.bContinue.Location = new System.Drawing.Point(83, 18);
-            this.bContinue.Margin = new System.Windows.Forms.Padding(2);
+            this.bContinue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bContinue.Name = "bContinue";
             this.bContinue.Size = new System.Drawing.Size(118, 37);
             this.bContinue.TabIndex = 1;
@@ -310,11 +310,11 @@
             this.ClientSize = new System.Drawing.Size(418, 362);
             this.Controls.Add(this.PauseMenu);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bExit);
+            this.Controls.Add(this.bPause);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Game10";
@@ -341,9 +341,9 @@
         private System.Windows.Forms.Label lSize;
         private System.Windows.Forms.Label lBomb;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bInfo;
+        private System.Windows.Forms.Button bExit;
+        private System.Windows.Forms.Button bPause;
         private System.Windows.Forms.Panel PauseMenu;
         private System.Windows.Forms.Button bReturn;
         private System.Windows.Forms.Button bRestart;

@@ -25,7 +25,7 @@ namespace New_menu_for_minersweeper.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("00 : 00")]
+        [global::System.Configuration.DefaultSettingValueAttribute("00 : 56")]
         public string best_time {
             get {
                 return ((string)(this["best_time"]));

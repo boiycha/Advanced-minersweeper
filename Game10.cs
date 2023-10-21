@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using System.Linq;
+using System.Collections;
+using System.Text;
 
 namespace New_menu_for_minersweeper
 {
@@ -138,12 +141,12 @@ namespace New_menu_for_minersweeper
             }
             tGame.Stop();
             MessageBox.Show("Вы проиграли");
-           
+           /*
             using (StreamWriter streamWriter = new StreamWriter("newrecords.txt", true))
             {
                 streamWriter.WriteLine("Проигрыш - " + Data.UserName + " " + lTimer1.Text + " : " + lTimer2.Text);
             }
-           
+           */
             Application.Restart();
 
         }
@@ -324,21 +327,68 @@ namespace New_menu_for_minersweeper
                 lValue.Text = lTimer1.Text + " : " + lTimer2.Text;
                 Properties.Settings.Default.best_time = lValue.Text;
                 Properties.Settings.Default.Save();
-
+            
                 lBest.Text = Data.UserName;
                 Properties.Settings.Default.best_user = lBest.Text;
                 Properties.Settings.Default.Save();
-                
 
-                using (StreamWriter streamWriter = new StreamWriter("newrecords.txt", true))
+                int min = Int32.Parse(lTimer1.Text) * 60;
+                int sec = Int32.Parse(lTimer2.Text);
+
+                int time = min + sec;
+
+                SetNewRecord(Data.UserName, time);
+
+                
+                /*
+                    using (StreamWriter streamWriter = new StreamWriter("records_10.txt", true))
                 {
 
-                    streamWriter.WriteLine("Выигрыш - " + Data.UserName + " " + lTimer1.Text + " : " + lTimer2.Text);
+                    streamWriter.WriteLine(Data.UserName + " " + lTimer1.Text + " : " + lTimer2.Text);
                 }
+                */
+
+               
                 Application.Restart();
             }
-        } 
-    }
+        }
+
+        static void SetNewRecord(string playerName, int record)
+        {
+            string[] records;
+            
+            using (StreamReader sr = new StreamReader(@"records_10.txt", Encoding.Default))
+            {
+                records = sr.ReadToEnd().Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            }
+
+            for (int i = 0; i < records.Length; i++)
+            {
+                if (records[i].Contains(playerName))
+                {
+                    if (int.Parse(records[i].Split(' ')[1]) >= record)
+                        return;
+                    else
+                    {
+                        records[i] = $"{playerName} {record}";
+
+                        using (StreamWriter sw = new StreamWriter(@"records_10.txt", false))
+                        {
+                            sw.WriteLine(string.Join("\r\n", records));
+                        }
+
+                        return;
+                    }
+                }
+            }
+
+           
+            using (StreamWriter sw = new StreamWriter(@"records_10.txt", true))
+            {
+                sw.WriteLine($"{playerName} {record}");
+            }
+        }
+ }
     class FieldButton : Button
     {
         public bool isBomb;
