@@ -52,10 +52,10 @@
             // 
             // bExit
             // 
-            this.bExit.Location = new System.Drawing.Point(237, 162);
+            this.bExit.Location = new System.Drawing.Point(235, 176);
             this.bExit.Margin = new System.Windows.Forms.Padding(2);
             this.bExit.Name = "bExit";
-            this.bExit.Size = new System.Drawing.Size(92, 60);
+            this.bExit.Size = new System.Drawing.Size(92, 46);
             this.bExit.TabIndex = 1;
             this.bExit.Text = "Выход";
             this.bExit.UseVisualStyleBackColor = true;
@@ -95,10 +95,10 @@
             // 
             // bRecords
             // 
-            this.bRecords.Location = new System.Drawing.Point(237, 72);
+            this.bRecords.Location = new System.Drawing.Point(235, 45);
             this.bRecords.Margin = new System.Windows.Forms.Padding(2);
             this.bRecords.Name = "bRecords";
-            this.bRecords.Size = new System.Drawing.Size(92, 60);
+            this.bRecords.Size = new System.Drawing.Size(92, 46);
             this.bRecords.TabIndex = 5;
             this.bRecords.Text = "Рекорды";
             this.bRecords.UseVisualStyleBackColor = true;
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 292);
+            this.ClientSize = new System.Drawing.Size(338, 251);
             this.Controls.Add(this.bRecords);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bPro);

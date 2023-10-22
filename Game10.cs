@@ -340,18 +340,12 @@ namespace New_menu_for_minersweeper
                 SetNewRecord(Data.UserName, time);
 
                 
-                /*
-                    using (StreamWriter streamWriter = new StreamWriter("records_10.txt", true))
-                {
-
-                    streamWriter.WriteLine(Data.UserName + " " + lTimer1.Text + " : " + lTimer2.Text);
-                }
-                */
-
+                
                
                 Application.Restart();
             }
         }
+        
 
         static void SetNewRecord(string playerName, int record)
         {
@@ -366,7 +360,7 @@ namespace New_menu_for_minersweeper
             {
                 if (records[i].Contains(playerName))
                 {
-                    if (int.Parse(records[i].Split(' ')[1]) >= record)
+                    if (int.Parse(records[i].Split(' ')[1]) > record)
                         return;
                     else
                     {
@@ -385,10 +379,14 @@ namespace New_menu_for_minersweeper
            
             using (StreamWriter sw = new StreamWriter(@"records_10.txt", true))
             {
-                sw.WriteLine($"{playerName} {record}");
+                sw.WriteLine($"{playerName} {record} сек");
             }
         }
- }
+        
+
+       
+
+    }
     class FieldButton : Button
     {
         public bool isBomb;
